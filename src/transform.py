@@ -4,6 +4,9 @@ from datetime import datetime
 file_path = "data/raw/customers.csv"
 
 seen_emails = []
+valid_customers = []
+invalid_customers = []
+
 #open csv file
 with open(file_path, "r", encoding="utf-8") as file:
 
@@ -13,18 +16,21 @@ with open(file_path, "r", encoding="utf-8") as file:
     name = customer["first_name"]
     email = customer["email"]
     signup_date = customer["signup_date"]
+    has_error = False
 
 
 
     #check if email is missing
     if email == "":
       print(name, "- Missing email")
+      has_error = True
     else:
       print(name,"-",email)
 
     if email != "":    
       if email in seen_emails:
         print(name, "- Duplicate customer")
+        has_error = True
       else:
         seen_emails.append(email)
 
@@ -35,4 +41,12 @@ with open(file_path, "r", encoding="utf-8") as file:
       datetime.strptime(signup_date, "%Y-%m-%d")
     except ValueError:
       print(name, "- Invalid date")
-    
+      has_error = True
+
+    if has_error:
+      invalid_customers.append(customer)
+    else:
+      valid_customers.append(customer)
+
+print("Valid customers:", len(valid_customers))
+print("Invalid customers:", len(invalid_customers)) 
