@@ -50,3 +50,17 @@ with open(file_path, "r", encoding="utf-8") as file:
 
 print("Valid customers:", len(valid_customers))
 print("Invalid customers:", len(invalid_customers)) 
+
+# Save valid customers to a new CSV file
+with open("data/processed/valid_customers.csv", "w", newline="", encoding="utf-8") as file:
+    writer = csv.DictWriter(file, fieldnames=reader.fieldnames)
+
+    writer.writeheader()
+    writer.writerows(valid_customers)
+
+# Save invalid customers to a new CSV file
+with open("data/processed/invalid_customers.csv", "w", newline="", encoding="utf-8") as file:
+    writer = csv.DictWriter(file, fieldnames=reader.fieldnames)
+
+    writer.writeheader()
+    writer.writerows(invalid_customers)

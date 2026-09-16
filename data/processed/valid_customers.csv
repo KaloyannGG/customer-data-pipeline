@@ -1,0 +1,4 @@
+customer_id,first_name,last_name,email,country,signup_date
+1,John,Smith,john.smith@example.com,UK,2026-01-15
+2,Maria,Ivanova,maria.ivanova@example.com,Bulgaria,2026-02-03
+4,Anna,Petrova,anna.petrova@example.com,Bulgaria,2026-02-12
