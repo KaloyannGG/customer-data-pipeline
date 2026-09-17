@@ -7,3 +7,11 @@ CREATE TABLE IF NOT EXISTS customers (
     country VARCHAR(50),
     signup_date DATE
 );
+
+-- orders table
+CREATE TABLE IF NOT EXISTS orders (
+    order_id INT PRIMARY KEY,
+    customer_id INT REFERENCES customers(customer_id),
+    order_date DATE,
+    amount DECIMAL(10,2)
+);
