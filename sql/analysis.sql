@@ -39,3 +39,25 @@ GROUP BY
     c.last_name
 ORDER BY
     order_count DESC;
+
+-- total order value by country
+SELECT
+    c.country,
+    SUM(o.amount) AS total_order_value
+FROM customers c
+JOIN orders o
+    ON c.customer_id = o.customer_id
+GROUP BY
+    c.country
+ORDER BY
+    total_order_value DESC;
+
+-- total order value by month
+SELECT
+    DATE_TRUNC('month', o.order_date) AS month,
+    SUM(o.amount) AS total_order_value
+FROM orders o
+GROUP BY
+    DATE_TRUNC('month', o.order_date)
+ORDER BY
+    month;
