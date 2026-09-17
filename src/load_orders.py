@@ -3,7 +3,6 @@ import psycopg
 from getpass import getpass
 
 password = getpass("PostgreSQL password: ")
-
 # connect to database
 connection = psycopg.connect(
     dbname="customer_data",
@@ -15,7 +14,6 @@ connection = psycopg.connect(
 
 with open("data/raw/orders.csv", "r", encoding="utf-8") as file:
     reader = csv.DictReader(file)
-
     cursor = connection.cursor()
 
     for order in reader:
@@ -24,6 +22,7 @@ with open("data/raw/orders.csv", "r", encoding="utf-8") as file:
             INSERT INTO orders
             (order_id, customer_id, order_date, amount)
             VALUES (%s, %s, %s, %s)
+            ON CONFLICT (order_id) DO NOTHING
             """,
             (
                 order["order_id"],
