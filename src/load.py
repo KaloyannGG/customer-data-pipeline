@@ -1,10 +1,12 @@
 import csv
+import os
 import psycopg
-from getpass import getpass
+from dotenv import load_dotenv
 
-password = getpass("PostgreSQL password: ")
+load_dotenv()
 
-# connect to customer_data
+password = os.getenv("DB_PASSWORD")
+
 connection = psycopg.connect(
     dbname="customer_data",
     user="postgres",
@@ -25,6 +27,7 @@ with open("data/processed/valid_customers.csv", "r", encoding="utf-8") as file:
             INSERT INTO customers
             (customer_id, first_name, last_name, email, country, signup_date)
             VALUES (%s, %s, %s, %s, %s, %s)
+            ON CONFLICT (customer_id) DO NOTHING
             """,
             (
                 customer["customer_id"],

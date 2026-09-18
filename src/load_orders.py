@@ -1,9 +1,12 @@
 import csv
+import os
 import psycopg
-from getpass import getpass
+from dotenv import load_dotenv
 
-password = getpass("PostgreSQL password: ")
-# connect to database
+load_dotenv()
+
+password = os.getenv("DB_PASSWORD")
+
 connection = psycopg.connect(
     dbname="customer_data",
     user="postgres",
