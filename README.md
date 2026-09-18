@@ -8,6 +8,7 @@ transforming, and analysing customer and order data.
 - Python
 - PostgreSQL
 - SQL
+- Power BI
 - Git
 - GitHub
 
@@ -15,6 +16,8 @@ transforming, and analysing customer and order data.
 
 - Extract customer and order data from CSV files
 - Validate and clean incoming data
+- Detect missing values, duplicate customers and invalid dates
 - Transform the data into a consistent format
 - Load clean data into PostgreSQL
-- Perform SQL analysis and reporting
+- Perform SQL analysis on customer and order data
+- Visualize the results in Power BI
