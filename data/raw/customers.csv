@@ -5,3 +5,17 @@ customer_id,first_name,last_name,email,country,signup_date
 4,Anna,Petrova,anna.petrova@example.com,Bulgaria,2026-02-12
 5,John,Smith,john.smith@example.com,UK,2026-01-15
 6,George,Wilson,george.wilson@example.com,USA,invalid_date
+7,Daniel,Muller,daniel.muller@example.com,Germany,2026-01-21
+8,Sofia,Garcia,sofia.garcia@example.com,Spain,2026-01-28
+9,Lucas,Martin,lucas.martin@example.com,France,2026-02-05
+10,Emma,Jansen,emma.jansen@example.com,Netherlands,2026-02-14
+11,Nikola,Dimitrov,nikola.dimitrov@example.com,Bulgaria,2026-02-20
+12,Oliver,Taylor,oliver.taylor@example.com,UK,2026-03-02
+13,Elena,Schmidt,elena.schmidt@example.com,Germany,2026-03-08
+14,Laura,Dubois,laura.dubois@example.com,France,2026-03-18
+15,Mateo,Lopez,mateo.lopez@example.com,Spain,2026-04-01
+16,Eva,DeVries,eva.devries@example.com,Netherlands,2026-04-09
+17,Petar,Georgiev,petar.georgiev@example.com,Bulgaria,2026-04-17
+18,Harry,Clark,harry.clark@example.com,UK,2026-05-03
+19,Mia,Wagner,mia.wagner@example.com,Germany,2026-05-11
+20,Chloe,Bernard,chloe.bernard@example.com,France,2026-05-24
